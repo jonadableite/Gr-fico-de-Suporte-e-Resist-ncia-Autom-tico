@@ -60,6 +60,18 @@ export default function Chart({ data, symbol, interval }) {
         style: {
           colors: theme === "dark" ? "#CBD5E1" : "#64748B",
         },
+        datetimeFormatter: {
+          year: "yyyy",
+          month: "MMM 'yy",
+          day: "dd MMM",
+          hour: "HH:mm",
+        },
+      },
+      axisBorder: {
+        color: theme === "dark" ? "#475569" : "#E2E8F0",
+      },
+      axisTicks: {
+        color: theme === "dark" ? "#475569" : "#E2E8F0",
       },
     },
     yaxis: {
@@ -85,6 +97,19 @@ export default function Chart({ data, symbol, interval }) {
     },
     tooltip: {
       theme: theme,
+      x: {
+        formatter: function (val) {
+          const date = new Date(val);
+          return date.toLocaleString("pt-BR", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          });
+        },
+      },
     },
     responsive: [
       {

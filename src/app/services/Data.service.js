@@ -9,7 +9,10 @@ export async function getData(symbol = "BTCUSDT", interval = "1m") {
     );
 
     const candles = response.data.map((k) => {
-      return new CandlePoint(k[0], k[1], k[2], k[3], k[4]);
+      // Ajuste o timestamp para o fuso horário local
+      const localTimestamp =
+        new Date(k[0]).getTime() - new Date().getTimezoneOffset() * 60000;
+      return new CandlePoint(localTimestamp, k[1], k[2], k[3], k[4]);
     });
 
     return {

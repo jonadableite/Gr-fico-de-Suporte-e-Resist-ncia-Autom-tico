@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "apexcharts": "^4.4.0",
+    "axios": "^1.7.9",
+    "biome": "^0.3.3",
+    "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-apexcharts": "^1.7.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "postcss": "^8",

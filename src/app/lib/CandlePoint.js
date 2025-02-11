@@ -1,12 +1,12 @@
-// src/lib/CandlePoint.js
-
+// src/app/lib/CandlePoint.js
 export default class CandlePoint {
   constructor(timestamp, open, high, low, close) {
-    this.x = new Date(timestamp);
+    this.x = new Date(parseInt(timestamp));
     this.y = [
       parseFloat(open),
       parseFloat(high),
-      parseFloat(low, parseFloat(close)),
+      parseFloat(low),
+      parseFloat(close),
     ];
   }
 
